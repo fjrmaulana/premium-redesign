@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style guide · Halden &amp; Co. redesign</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .sg { padding: 64px 0 96px; }
+    .sg h2.sec { font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--brass); margin: 72px 0 24px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .grid { display: grid; gap: 20px; }
+    .g6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sw { border: 1px solid var(--line); }
+    .sw i { display: block; height: 110px; }
+    .sw div { padding: 12px 14px; font-size: 13px; }
+    .sw b { display: block; font-weight: 600; }
+    .sw code, .row code, .lbl code { font-size: 12px; color: var(--muted); }
+    .row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .lbl { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .space { display: flex; align-items: flex-end; gap: 22px; flex-wrap: wrap; }
+    .space div { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+    .space span { display: block; background: var(--brass-soft); }
+    .comp { border: 1px dashed var(--line); padding: 28px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+    .states { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .hov::before { transform: scaleX(1) !important; }
+    .btn-outline.hov { color: var(--paper); }
+    @media (max-width: 900px) { .g6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .g2 { grid-template-columns: minmax(0, 1fr); } .row { grid-template-columns: minmax(0, 1fr); gap: 6px; } }
+  </style>
+</head>
+<body>
+  <header class="header"><div class="wrap header-in"><a href="index.html" class="logo">Halden <em>&amp;</em> Co.</a><span class="eyebrow">Design system &amp; handover guide</span></div></header>
+  <main class="wrap sg">
+    <p class="eyebrow">Handover guide</p>
+    <h1 class="display" style="margin-top:20px">The system behind <em>the polish.</em></h1>
+    <p class="lead" style="margin-top:24px">Every value below is a variable in <code>css/styles.css</code>. Change it once and every page updates, so new pages stay consistent.</p>
+
+    <h2 class="sec">01 · Colour</h2>
+    <div class="grid g6">
+      <div class="sw"><i style="background:#16191E"></i><div><b>Ink</b><code>--ink #16191E</code><br><small>Text, dark sections, primary button</small></div></div>
+      <div class="sw"><i style="background:#2B2F36"></i><div><b>Ink 2</b><code>--ink-2 #2B2F36</code><br><small>Navigation, secondary text</small></div></div>
+      <div class="sw"><i style="background:#9A7A4A"></i><div><b>Brass</b><code>--brass #9A7A4A</code><br><small>Accents, italics, hover fill</small></div></div>
+      <div class="sw"><i style="background:#C9B48F"></i><div><b>Brass soft</b><code>--brass-soft #C9B48F</code><br><small>Accents on dark</small></div></div>
+      <div class="sw"><i style="background:#F3EEE7"></i><div><b>Stone</b><code>--stone #F3EEE7</code><br><small>Alternate sections</small></div></div>
+      <div class="sw"><i style="background:#FBF9F6"></i><div><b>Paper</b><code>--paper #FBF9F6</code><br><small>Page background</small></div></div>
+    </div>
+
+    <h2 class="sec">02 · Typography</h2>
+    <div class="row"><span class="lbl">Display / H1<br><code>Instrument Serif 112 / 0.96</code></span><span class="display" style="font-size:72px">Considered <em>advice</em></span></div>
+    <div class="row"><span class="lbl">Heading / H2<br><code>Instrument Serif 68 / 1.02</code></span><span class="h2" style="font-size:48px">Unhurried. <em>Precise.</em></span></div>
+    <div class="row"><span class="lbl">Heading / H3<br><code>Instrument Serif 28 / 1.15</code></span><span style="font-family:var(--serif);font-size:28px">A calm approach to succession</span></div>
+    <div class="row"><span class="lbl">Lead<br><code>Archivo 19 / 1.7</code></span><span class="lead">An independent practice helping families and businesses make clear decisions.</span></div>
+    <div class="row"><span class="lbl">Body<br><code>Archivo 17 / 1.65</code></span><span>Short paragraphs and a 60–70 character line length keep long reading comfortable.</span></div>
+    <div class="row"><span class="lbl">Eyebrow<br><code>Archivo 13 · 0.24em caps</code></span><span class="eyebrow">Section label</span></div>
+
+    <h2 class="sec">03 · Spacing (8 px grid)</h2>
+    <div class="space">
+      <div><span style="width:8px;height:8px"></span>s-1 · 8</div><div><span style="width:16px;height:16px"></span>s-2 · 16</div><div><span style="width:24px;height:24px"></span>s-3 · 24</div><div><span style="width:32px;height:32px"></span>s-4 · 32</div><div><span style="width:48px;height:48px"></span>s-6 · 48</div><div><span style="width:64px;height:64px"></span>s-8 · 64</div><div><span style="width:96px;height:96px"></span>s-12 · 96</div><div><span style="width:128px;height:128px"></span>s-16 · 128</div>
+    </div>
+    <p style="margin-top:18px;color:var(--muted);font-size:15px">Sections: 128 px desktop · 96 px tablet · 64 px mobile. Container 1280 px, gutter 20–56 px.</p>
+
+    <h2 class="sec">04 · Components &amp; states</h2>
+    <div class="grid g2">
+      <div class="comp"><span class="lbl">Button / Primary</span><div class="states"><a class="btn btn-primary" href="#"><span>Default</span></a><a class="btn btn-primary hov" href="#"><span>Hover</span></a></div><code style="font-size:12px;color:var(--muted)">Brass fill wipes in from left, 0.5s ease</code></div>
+      <div class="comp"><span class="lbl">Button / Outline</span><div class="states"><a class="btn btn-outline" href="#"><span>Default</span></a><a class="btn btn-outline hov" href="#"><span>Hover</span></a></div><code style="font-size:12px;color:var(--muted)">Ink fill wipes in, text turns paper</code></div>
+      <div class="comp"><span class="lbl">Text link</span><a class="link" href="#">Our services</a><code style="font-size:12px;color:var(--muted)">Underline contracts to 35% on hover</code></div>
+      <div class="comp"><span class="lbl">Service row</span><ul class="services" style="margin:0;width:100%"><li><a class="service" href="#" style="grid-template-columns:48px 1fr 48px"><span class="no">01</span><h3 style="font-size:30px">Strategic advisory</h3><span class="go" aria-hidden="true"><span class="arrow"></span></span></a></li></ul><code style="font-size:12px;color:var(--muted)">Hover: row indents 24 px, arrow fills ink</code></div>
+    </div>
+
+    <h2 class="sec">05 · Imagery &amp; motion</h2>
+    <div class="row"><span class="lbl">Imagery</span><span>Natural light, warm neutrals, no heavy filters. Ratios: 21:9 hero, 4:5 portrait, 4:3 cards. Your existing photos drop into the same frames.</span></div>
+    <div class="row"><span class="lbl">Micro-interactions</span><span>Sections fade up 24 px on scroll (1s). Images scale 1.04 on hover. Hero image settles from 1.06 to 1. All motion is disabled for users who prefer reduced motion.</span></div>
+    <div class="row"><span class="lbl">Breakpoints</span><span>Desktop ≥ 1025 px · Tablet 641–1024 px · Mobile ≤ 640 px</span></div>
+  </main>
+</body>
+</html>
